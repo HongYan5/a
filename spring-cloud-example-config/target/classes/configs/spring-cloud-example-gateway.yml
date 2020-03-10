@@ -1,7 +1,8 @@
 spring:
   application:
     name: spring-cloud-example-gateway
-
+  
+            
 server:
   port: 8002
 
@@ -17,23 +18,10 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     
     
-spring:
-  application:
-    name: gateway_server
-  cloud:
-    gateway:
-      default-filters:
-      routes:
-        - id: my_route
-          #uri: http://localhost:8012/
-          uri: lb://my-load-balanced-service
-          predicates:
-            - Path=/gateway/**
-          filters:
-            - StripPrefix=1
-            
+
             
 my-load-balanced-service:
   ribbon:
-    listOfServers: localhost:8010, localhost:8011
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+    listOfServers: localhost:8010,localhost:8012,localhost:8013,
+                   localhost:8011,localhost:8014
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

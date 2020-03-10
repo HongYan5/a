@@ -11,10 +11,11 @@
         <module>spring-cloud-example-config</module>
         <module>spring-cloud-example-registry</module>
         <module>spring-cloud-example-biz-b</module>
+        <module>spring-cloud-example-biz-b2</module>
         <module>spring-cloud-example-biz-a</module>
+        <module>spring-cloud-example-biz-a2</module>
+        <module>spring-cloud-example-biz-a3</module>
     	<module>spring-cloud-example-ribbon</module>
-    	<module>a</module>
-    	<module>aa</module>
     </modules>
     <packaging>pom</packaging>
 
